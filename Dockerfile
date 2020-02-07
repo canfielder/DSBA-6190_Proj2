@@ -1,20 +1,13 @@
 FROM python:3.7.3-alpine
 
-# Working Directory
-WORKDIR /app
+ENV APP_HOME /app
+WORKDIR $APP_HOME
 
-# Copy source code to working directory
-#COPY . app.py /app/
 COPY requirements.txt .
 
-# Install packages from requirements.txt
-# hadolint ignore=DL3013
-RUN pip install --upgrade pip &&\
-    pip install --trusted-host pypi.python.org -r requirements.txt
+RUN apk add --no-cache --virtual .build-deps python3-dev gcc build-base \
+ && pip install --no-cache-dir -r requirements.txt \
+ && apk del .build-deps
 
-# Expose port 80
-EXPOSE 80
-
-# Run main.py at container launch
 ENTRYPOINT [ "python" ]
-CMD [ "main.py" ]
+CMD [ "app.py" ]
