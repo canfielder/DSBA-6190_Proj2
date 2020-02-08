@@ -10,6 +10,7 @@ test:
 	#python -m pytest --nbval notebook.ipynb
 
 lint:
+	hadolint Dockerfile 
 	pylint --disable=R,C main.py
 
 run:
