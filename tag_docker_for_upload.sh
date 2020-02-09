@@ -2,7 +2,7 @@
 # This tags and uploads an image to Docker Hub
 
 #Assumes this is built
-#docker build --tag=flasksklearn .
+#docker build --tag=dsba-6190_proj2_docker .
 
 
 dockerpath="canfielder/dsba-6190_proj2_docker"
