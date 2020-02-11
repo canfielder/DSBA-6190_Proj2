@@ -18,7 +18,7 @@ LOG.setLevel(logging.INFO)
 def predict():
     
     form = InputForm(request.form)
-    LOG.info(f"Form Require: {form}", form=form)
+    LOG.info(f"Form Require: {form}")
     
     if request.method == 'POST' and form.validate():
         # Convert Input Table Data to DataFrame

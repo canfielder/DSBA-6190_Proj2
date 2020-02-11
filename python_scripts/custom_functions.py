@@ -1,5 +1,4 @@
 from sklearn.preprocessing import StandardScaler
-import pandas as pd
 
 # Functions for use in Main.py
 
