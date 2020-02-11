@@ -15,8 +15,8 @@ lint:
 	pylint --disable=R,C python_scripts/**.py
 	pylint --disable=R,C,W0104,E0602 wine_predict/**.ipynb
 
-
 run:
 	python3 main.py
+	
 all: 
 	install lint test
