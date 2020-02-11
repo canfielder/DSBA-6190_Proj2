@@ -41,4 +41,4 @@ def predict():
 
 if __name__ == '__main__':
     clf = joblib.load('wine_predict/wine_quality_prediction.joblib')
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0', port=8080)
