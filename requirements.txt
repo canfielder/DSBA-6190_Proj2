@@ -4,3 +4,4 @@ docker-compose
 pandas
 sklearn
 joblib
+wtforms

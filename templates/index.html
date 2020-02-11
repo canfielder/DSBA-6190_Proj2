@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+    <link rel="stylesheet" media="screen" href="{{  url_for('static', filename="bootstrap.min.css")  }}"
+
+    <head>
+        <!-- Required metadata tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Predict Wine Quality with SKlearn">
+
+        <title>Predict Red Wine Quality with Sklearn Model</title>
+    </head>
+    
+    <body class - "body">
+    <body>
+        <div class="container">
+            <h1> Predict Red Wine Quality</h1>
+            <p>
+                An sklearn model was developed to predict red wine quality ratings
+                based on the inputs shown below. The model uses a Random Forest 
+                Regressor engine. 
+                <br>
+                <br>
+                **Enter the required inputs below and select Calculate to generate a 
+                red wine quality score prediction.**
+            </p>
+        </div>
+        
+        <div class="container">
+            <table>
+                {% for field in form %}
+                    <tr>
+                        <td>{{ field.label }}</td>
+                        <td>{{ field }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <p><input type=submit value=Calculate></form></p>
+        </div>
+        
+        <div class="container">
+            <p>
+            {% if result != None %}
+            result
+            {% endif %}
+            </p>
+        </div>
+        
+    </body>
