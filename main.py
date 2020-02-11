@@ -20,25 +20,35 @@ def predict():
     form = InputForm(request.form)
     LOG.info(f"Form Require: {form}")
 
+    x = form.alcohol.data
+    LOG.info(f"Form Check: {x}")
+
     if request.method == 'POST' and form.validate():
+
+        x = 1
+        LOG.info(f"POST Check: {x}")
+
         # Convert Input Table Data to DataFrame
         df_input = create_dataframe(form)
         LOG.info(f"Convert Input to DataFrame: {df_input}")
 
         # Scale Input Data per Sklearn model parameters
-        df_scaled = scale(df_input)
+        df_scaled = scale(df_input, scaler)
         LOG.info(f"Scale Input Data: {df_scaled}")
 
         # Predict Wine Quality
-        prediction = list(clf.predict(df_scaled))
+        prediction = clf.predict(df_scaled)
         LOG.info(f"Predict: {prediction}")
+        # result = list(clf.predict(df_scaled))
+        result = prediction
 
     else:
-        prediction = None
+        result = None
 
-    return render_template('index.html', form=form, result=jsonify(prediction))
+    return render_template('index.html', form=form, result=result)
 
 
 if __name__ == '__main__':
     clf = joblib.load('wine_predict/wine_quality_prediction.joblib')
+    scaler = joblib.load('wine_predict/standard_scaler.joblib')
     app.run(debug=True, host='0.0.0.0', port=8080)
