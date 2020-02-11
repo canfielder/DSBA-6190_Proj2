@@ -2,9 +2,9 @@ from flask import Flask, request, jsonify
 from flask.logging import create_logger
 import logging
 
-import pandas as pd
-from sklearn.externals import joblib
 from sklearn.preprocessing import StandardScaler
+import pandas as pd
+import joblib
 
 app = Flask(__name__)
 LOG = create_logger(app)
@@ -27,35 +27,11 @@ def home():
 
 @app.route("/predict", methods=['POST'])
 def predict():
-        """Performs an sklearn prediction
-    input looks like:
-            {
-    "CHAS":{
-      "0":0
-    },
-    "RM":{
-      "0":6.575
-    },
-    "TAX":{
-      "0":296.0
-    },
-    "PTRATIO":{
-       "0":15.3
-    },
-    "B":{
-       "0":396.9
-    },
-    "LSTAT":{
-       "0":4.98
-    }
-    result looks like:
-    { "prediction": [ 20.35373177134412 ] }
-    """
     
-    json_payload = request.json
+    json_payload = request.get_json()
     LOG.info(f"JSON payload: {json_payload}")
     
-    inference_payload = pd.DataFrame(json_payload)
+    inference_payload = pd.read_json(json_payload)
     LOG.info(f"inference payload DataFrame: {inference_payload}")
     
     scaled_payload = scale(inference_payload)
@@ -65,5 +41,5 @@ def predict():
 
 
 if __name__ == '__main__':
-    clf = joblib.load('wine_quality_prediction.joblib')
+    clf = joblib.load('wine_predict/wine_quality_prediction.joblib')
     app.run(debug=True, host='0.0.0.0')

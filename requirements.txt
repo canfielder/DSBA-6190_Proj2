@@ -1,3 +1,6 @@
 pylint
 Flask
 docker-compose
+pandas
+sklearn
+joblib
