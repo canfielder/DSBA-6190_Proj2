@@ -25,3 +25,4 @@ def create_dataframe(form):
         ['alcohol', form.alcohol.data], 
         ['citric_acid', form.chlorides.data]
     ]
+    return df_input

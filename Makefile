@@ -12,9 +12,9 @@ test:
 lint:
 	hadolint Dockerfile 
 	pylint --disable=R,C main.py
+	pylint --disable=R,C python_scripts/model.py
 
 run:
-	python main.py
-
+	python3 main.py
 all: 
 	install lint test

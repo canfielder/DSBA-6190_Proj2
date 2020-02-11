@@ -2,13 +2,11 @@ from flask import Flask, request, render_template
 from flask.logging import create_logger
 import logging
 
-from sklearn.preprocessing import StandardScaler
-import pandas as pd
 import joblib
 
 # Import from Python Scripts
-from model import InputForm
-from compute import scale, create_dataframe
+from python_scripts.model import InputForm
+from python_scripts.custom_functions import create_dataframe, scale
 
 app = Flask(__name__)
 LOG = create_logger(app)
