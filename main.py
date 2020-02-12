@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, url_for
 from flask.logging import create_logger
 import logging
 
@@ -15,11 +15,9 @@ LOG.setLevel(logging.INFO)
 
 # App Pages
 
-
 @app.route("/")
 def home():
-    html = "<h3>Sklearn Prediction Home</h3>"
-    return html.format(format)
+    return render_template('index.html')
 
 
 @app.route('/predict', methods=['GET', 'POST'])
@@ -53,7 +51,7 @@ def predict():
     else:
         result = None
 
-    return render_template('index.html', form=form, result=result)
+    return render_template('predict.html', form=form, result=result)
 
 
 if __name__ == '__main__':
