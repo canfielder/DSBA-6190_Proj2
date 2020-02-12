@@ -15,4 +15,4 @@ RUN pip install --upgrade pip &&\
 EXPOSE 80
 
 # Run main.py at container launch
-CMD ["python", "main.py"]
+CMD ["python3", "main.py"]

@@ -14,7 +14,15 @@ LOG.setLevel(logging.INFO)
 
 
 # App Pages
-@app.route('/', methods=['GET', 'POST'])
+
+
+@app.route("/")
+def home():
+    html = "<h3>Sklearn Prediction Home</h3>"
+    return html.format(format)
+
+
+@app.route('/predict', methods=['GET', 'POST'])
 def predict():
 
     form = InputForm(request.form)
@@ -51,4 +59,4 @@ def predict():
 if __name__ == '__main__':
     clf = joblib.load('wine_predict/wine_quality_prediction.joblib')
     scaler = joblib.load('wine_predict/standard_scaler.joblib')
-    app.run(debug=True, host='0.0.0.0', port=8080)
+    app.run(debug=True, host='0.0.0.0')
