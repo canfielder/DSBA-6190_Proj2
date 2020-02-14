@@ -38,8 +38,10 @@ def predict():
         # Predict Wine Quality
         prediction = clf.predict(df_scaled)
         LOG.info(f"Predict: {prediction}")
-        # result = list(clf.predict(df_scaled))
-        result = prediction
+        
+        #Convert to String Output
+        final_output = "Predicted Wine Score: " + str(prediction)[1:-1] 
+        result = final_output
 
     else:
         result = None

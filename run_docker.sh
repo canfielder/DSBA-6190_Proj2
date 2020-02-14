@@ -7,4 +7,4 @@ docker build --tag=dsba-6190_proj2_docker .
 docker image ls
 
 # Run flask app
-docker run -p 8000:80 dsba-6190_proj2_docker
+docker run --rm -d -p 8080:80 dsba-6190_proj2_docker
