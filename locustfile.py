@@ -1,8 +1,8 @@
 from locust import HttpLocust, TaskSet, between
 
 def index(l):
-    l.clinet.get("/")
-    
+    l.client.get("/")
+
 class UserBehavior(TaskSet):
     tasks = {index: 1}
 
