@@ -1,4 +1,5 @@
 pylint
+nbval
 Flask
 docker-compose
 pandas
