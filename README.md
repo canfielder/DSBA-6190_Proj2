@@ -2,7 +2,7 @@
 Photo by Kym Ellis on Unsplash
 
 # DSBA 6190 Project 2
-## Dockerized Flask App for Prediction Red Wine Quality Via Sklearn Model
+## Dockerized Flask App for Predicting Red Wine Quality Via Sklearn Model
 [![CircleCI](https://circleci.com/gh/canfielder/DSBA-6190_Proj2.svg?style=svg)](https://circleci.com/gh/canfielder/DSBA-6190_Proj2)
 
 The followings repo contains a Flask App and a Dockerfile which will containerize the entire app and run the app when called. Additionally, this app is enabled with the necessary files to run a Locust load test. These files were created for UNC Charlotte Spring 2020 DSBA 6190 (Introduction to Cloud Computing) Project 2.
