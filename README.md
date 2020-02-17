@@ -35,6 +35,8 @@ The full analysis can be seen in [notebook included in this repo](https://github
 ### Using The App
 Once deployed, the app opens on a landing page with a link to page for wine predictions. Entering the requested inputs and selecting Calculate will generate a wine quality score. Note, if no value is input the model will use 0 for that variable.
 
+The following is an example of using the app to generate a win quality score.
+
 ![](https://github.com/canfielder/DSBA-6190_Proj2/blob/master/static/2020-02-17%2012_45_29-Predict%20Red%20Wine%20Quality%20with%20Sklearn%20Model.png)
 
 ## Docker
