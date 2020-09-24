@@ -45,7 +45,7 @@ A Dockerfile is included in this repo allowing for the containerization of the F
 The deployed docker container is also found at [Dockerhub](https://hub.docker.com/repository/docker/canfielder/dsba-6190_proj2_docker). 
 
 ## Locust Load Test
-The required files to run a locust load test were also included in this app. This was en effort to become more familiar with using locust in lead up to the final DSBA 6190 project. 
+The required files to run a locust load test were also included in this app. This was an effort to become more familiar with using locust in lead up to the final DSBA 6190 project. 
 
 The folloiwng charts were generated when running 100 users at 1 additional user every half second.
 
