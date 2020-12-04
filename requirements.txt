@@ -6,4 +6,4 @@ pandas==1.0.1
 sklearn==0.0
 joblib==0.14.1
 wtforms==2.2.1
-locust==0.0
+locust==1.0
